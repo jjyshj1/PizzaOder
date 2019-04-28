@@ -1,10 +1,11 @@
 package com.example.pizzaoder;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 
-import com.bumptech.glide.Glide;
 import com.example.pizzaoder.adapter.PizzarAdapter;
 import com.example.pizzaoder.databinding.ActivityMainBinding;
 import com.example.pizzaoder.datas.Stores;
@@ -35,6 +36,17 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setupEvents() {
 
+        act.pizzastoreList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Stores selectedData = stores.get(position);
+
+                Intent intent = new Intent(MainActivity.this, StoreDetailActivity.class);
+                intent.putExtra("storeData",selectedData);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -52,9 +64,6 @@ public class MainActivity extends BaseActivity {
         act = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
     }
-
-
-
 
 
     void fillstore(){

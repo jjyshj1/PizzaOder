@@ -1,6 +1,8 @@
 package com.example.pizzaoder.datas;
 
-public class Stores {
+import java.io.Serializable;
+
+public class Stores implements Serializable {
 
     public String storeName;
     public String openTime;
