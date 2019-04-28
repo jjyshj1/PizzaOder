@@ -14,7 +14,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/mlogoImg"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
@@ -31,13 +31,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     android:text="상  호"/>
                 <TextView
                     android:id="@+id/mstoreNameTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
                     android:hint="실제 가게 이름"/>
             </LinearLayout>
 
@@ -55,13 +56,14 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="30dp"
+                        android:textSize="25dp"
                         android:text="전화번호"/>
                     <TextView
                         android:id="@+id/mphoneNumberTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="30dp"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
                         android:hint="실제 전화번호"/>
                 </LinearLayout>
 
@@ -88,7 +90,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="메뉴선택"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     />
                 <Spinner
                     android:layout_width="match_parent"
