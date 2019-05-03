@@ -87,18 +87,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
                 <TextView
-                    android:layout_width="150dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="메뉴선택"
                     android:textSize="25dp"
                     />
                 <Spinner
-                    android:layout_width="match_parent"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:textSize="30dp"
+                    android:layout_marginLeft="20dp"
                     android:entries="@array/pizza">
 
                 </Spinner>
+
+                <Button
+                    android:id="@+id/menuBtn"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="확  인"
+                    android:textSize="25dp"
+                    android:layout_marginLeft="15dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
 
             </LinearLayout>
 
