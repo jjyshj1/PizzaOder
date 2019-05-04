@@ -1,5 +1,6 @@
 package com.example.pizzaoder;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -87,9 +88,12 @@ public class MainActivity extends BaseActivity {
         String returnedStoreName;
         String returnedMenu;
 
-        returnedStoreName = data.getStringExtra("selectedStoreName");
-        returnedMenu = data.getStringExtra("selectedSpinner");
-        Toast.makeText(MainActivity.this,returnedStoreName+" : "+returnedMenu, Toast.LENGTH_SHORT).show();
+        if(resultCode== Activity.RESULT_OK){
+            returnedStoreName = data.getStringExtra("selectedStoreName");
+            returnedMenu = data.getStringExtra("selectedSpinner");
+            Toast.makeText(MainActivity.this,returnedStoreName+" : "+returnedMenu, Toast.LENGTH_SHORT).show();
+        }
+
 
 
     }
