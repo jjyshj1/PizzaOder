@@ -3,8 +3,10 @@ package com.example.pizzaoder;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.example.pizzaoder.adapter.PizzarAdapter;
 import com.example.pizzaoder.databinding.ActivityMainBinding;
@@ -44,7 +46,8 @@ public class MainActivity extends BaseActivity {
 
                 Intent intent = new Intent(MainActivity.this, StoreDetailActivity.class);
                 intent.putExtra("storeData",selectedData);
-                startActivity(intent);
+                //startActivity(intent);
+                startActivityForResult(intent,101);
             }
         });
     }
@@ -75,5 +78,19 @@ public class MainActivity extends BaseActivity {
         stores.add(new Stores("피자스쿨","16:00~21:00","02-666-1111","https://modo-phinf.pstatic.net/20150501_269/1430484184544WKwLF_JPEG/mosa7NPaR2.jpeg?type=f320_320"));
         stores.add(new Stores("피자나라 치킨공주","09:00~21:00","02-777-1111","https://3.bp.blogspot.com/-ZG3xHq33WYk/VEjqAmCdjSI/AAAAAAAAj2s/TVJ727tK1Bw/s1600/59%EC%8C%80%ED%94%BC%EC%9E%90-%EB%A1%9C%EA%B3%A0.png"));
         stores.add(new Stores("7번가피자","08:00~21:00","02-888-1111","https://1.bp.blogspot.com/-BRvTIwQrxIg/VEhBZ77V_oI/AAAAAAAAjx0/ZFGs4svOq7s/s1600/7%EB%B2%88%EA%B0%80%ED%94%BC%EC%9E%90-%EB%A1%9C%EA%B3%A0.png"));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        String returnedStoreName;
+        String returnedMenu;
+
+        returnedStoreName = data.getStringExtra("selectedStoreName");
+        returnedMenu = data.getStringExtra("selectedSpinner");
+        Toast.makeText(MainActivity.this,returnedStoreName+" : "+returnedMenu, Toast.LENGTH_SHORT).show();
+
+
     }
 }

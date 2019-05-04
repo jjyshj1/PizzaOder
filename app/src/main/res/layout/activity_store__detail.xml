@@ -93,6 +93,7 @@
                     android:textSize="25dp"
                     />
                 <Spinner
+                    android:id="@+id/menuspinner"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:textSize="30dp"
