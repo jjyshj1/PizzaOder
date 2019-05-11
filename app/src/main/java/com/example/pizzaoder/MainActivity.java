@@ -89,12 +89,13 @@ public class MainActivity extends BaseActivity {
         String returnedMenu;
 
         if(resultCode== Activity.RESULT_OK){
-            returnedStoreName = data.getStringExtra("selectedStoreName");
-            returnedMenu = data.getStringExtra("selectedSpinner");
-            Toast.makeText(MainActivity.this,returnedStoreName+" : "+returnedMenu, Toast.LENGTH_SHORT).show();
+            if(requestCode==101){
+                returnedStoreName = data.getStringExtra("selectedStoreName");
+                returnedMenu = data.getStringExtra("selectedSpinner");
+                Toast.makeText(MainActivity.this,returnedStoreName+" : "+returnedMenu, Toast.LENGTH_SHORT).show();
+            }
+
         }
-
-
 
     }
 }
